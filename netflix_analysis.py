@@ -7,4 +7,8 @@ import pandas as pd
 # Countries with the most content?
 
 df = pd.read_csv("data.csv")
-print(df.to_string())
+# print(df["release_year"].to_string())
+
+group = df.groupby("release_year")
+group_count = group["release_year"].count()
+print(group_count.max())
