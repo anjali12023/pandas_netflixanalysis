@@ -1,14 +1,23 @@
 import pandas as pd 
 
-#Which year had the most releases?
-# Most common genres?
 # Longest movies?
 # Movies vs TV shows?
 # Countries with the most content?
 
 df = pd.read_csv("data.csv")
+# print(df)
 # print(df["release_year"].to_string())
 
+#Which year had the most releases?
 group = df.groupby("release_year")
 group_count = group["release_year"].count()
-print(group_count.max())
+most_releases_year = group_count.idxmax()
+most_releases = group_count.max()
+print(f"Most releases were in {most_releases_year}, with {most_releases} releases!")
+
+
+# Most common genres?
+# print(df["listed_in"].to_string())
+# group = df.groupby("listed_in")
+# group_count = group["listed_in"].count()
+# print(group_count.max())
