@@ -28,8 +28,13 @@ most_category = group_count.max()
 
 
 # Longest movies?
-#group by all movies
+#filer all movies
 # max movies
 
-group = df.groupby["Type"=="Movie"]
+# group = df.groupby["type"]
 print(group)
+
+group = df[df["type"] == "Movie"]
+group_count = group["duration"].max()
+# most_category = group_count.max()
+print(f"Longest movie ran for {group_count}!")
