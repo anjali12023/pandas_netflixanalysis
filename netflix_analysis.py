@@ -1,6 +1,5 @@
 import pandas as pd 
 
-# Longest movies?
 # Movies vs TV shows?
 # Countries with the most content?
 
@@ -32,9 +31,19 @@ most_category = group_count.max()
 # max movies
 
 # group = df.groupby["type"]
-print(group)
+# print(group)
 
 group = df[df["type"] == "Movie"]
 group_count = group["duration"].max()
 # most_category = group_count.max()
-print(f"Longest movie ran for {group_count}!")
+# print(f"Longest movie ran for {group_count}!")
+
+# Movies vs TV shows?
+movie = df[df["type"] == "Movie"]
+movie_count = movie["type"].count()
+tv = df[df["type"] == "TV Show"]
+tv_count = tv["type"].count()
+# print(f"Total number of movies: {movie_count}, and TV Shows: {tv_count}")
+
+
+
