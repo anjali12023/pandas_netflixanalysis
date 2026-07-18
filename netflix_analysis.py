@@ -1,7 +1,5 @@
 import pandas as pd 
 
-# Movies vs TV shows?
-# Countries with the most content?
 
 df = pd.read_csv("data.csv")
 # print(df)
@@ -46,4 +44,16 @@ tv_count = tv["type"].count()
 # print(f"Total number of movies: {movie_count}, and TV Shows: {tv_count}")
 
 
+# # Countries with the most content?
+# country = df[df["type"] == "Country"]
+# country_count = movie["type"].count()
 
+
+
+group = df.groupby("country")
+group_count = group["country"].count()
+most_category = group_count.max()
+most_category_text = group_count.idxmax()
+print(most_category)
+print(most_category_text)
+print(group_count)
